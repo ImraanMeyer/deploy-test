@@ -9,7 +9,6 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 
-// View engine setup
 
 // Setup body-parser, cookie-parser, morgan
 app.use(logger('dev'));
@@ -78,8 +77,10 @@ app.use(function(err, req, res, next) {
 const mongoUri = process.env.MONGODB_URL;
 mongoose.Promise = global.Promise; 
 mongoose.connect(mongoUri, {
-	useMongoClient: true
+	 useUnifiedTopology: true,
+   useNewUrlParser: true
 });
+
 mongoose.connection.on('error', function() {
 	console.log('Connection to Mongo established.');
   console.log('Could not connect to the database. Exiting now...');
