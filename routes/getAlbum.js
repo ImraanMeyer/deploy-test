@@ -1,7 +1,11 @@
-//Find all users photo album 'pages' (documents)
-module.exports = function(app) {
-  const album = require('../controllers/photoAlbum.controller.js');
-  app.post('/getAlbum', album.getAlbum);
-}
 
 //Export for use in ./controllers/photoAlbum.controller.js
+
+const express = require('express');
+const router = express.Router();
+
+const album = require('../controllers/photoAlbum.controller.js');
+
+router.post('/getAlbum', album.getAlbum);
+
+module.exports = router;
