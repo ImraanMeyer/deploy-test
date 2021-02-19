@@ -22,7 +22,7 @@ test('renders states correctly when populated', () => {
 
 //Test fetch() function used in CreateAccount.js is working correctly
 test('create new user', () => {
-  fetch('/newUser', { //send POST request to server
+  fetch('/api/newUser', { //send POST request to server
     method: "POST",
     headers: {
       "Content-Type": "application/json"

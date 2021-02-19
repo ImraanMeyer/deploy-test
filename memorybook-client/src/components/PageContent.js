@@ -49,7 +49,7 @@ class PageContent extends Component {
 
   //Load Page text content (header and photo description)
   loadPageTxt() {
-    fetch('/getAlbum', { //Send fetch request to server to get user's page
+    fetch('/api/getAlbum', { //Send fetch request to server to get user's page
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -85,7 +85,7 @@ class PageContent extends Component {
 
   //Load Page image
   loadImages() {
-    fetch('/getImage', { //Send fetch request to server to get page image
+    fetch('/api/getImage', { //Send fetch request to server to get page image
       method: "POST",
       headers: { "Content-Type": "application/json" }, 
       body: JSON.stringify({ //Send user's details and pageID to find image (passed from Photo Album)
@@ -142,7 +142,7 @@ class PageContent extends Component {
 
   //Upload Page Text (header + photoDesc)
   uploadPageText() {
-    fetch('/updatePage', {
+    fetch('/api/updatePage', {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -167,7 +167,7 @@ class PageContent extends Component {
   uploadImage = async (base64EncodedImage) => { 
     if (!base64EncodedImage) return; //If there is no image, return
     try {
-      await fetch('/saveImage', { 
+      await fetch('/api/saveImage', { 
         method: "POST", //Send POST request to server
         headers: {
           "Content-Type": "application/json"
@@ -192,7 +192,7 @@ class PageContent extends Component {
   // Delete Selected Page
   deletePage() {
     this.deleteImage(); //call function to delete page's image
-    fetch('/deletePage', {
+    fetch('/api/deletePage', {
       method: "DELETE", //Send DELETE request to server
       headers: {
         "Content-Type": "application/json"
@@ -213,7 +213,7 @@ class PageContent extends Component {
   deleteImage() {
     if (this.state.imageID === '') return; //if there is no image return
     else {
-      fetch('/deleteImage', {
+      fetch('/api/deleteImage', {
         method: "DELETE", //Send DELETE request to server
         headers: {
           "Content-Type": "application/json"

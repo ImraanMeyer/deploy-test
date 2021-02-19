@@ -32,7 +32,7 @@ class Header extends Component {
       console.log("Unable to read token");
     } else { //If there is a token...
       //Authorise token and fetch users details
-      fetch('/auth', { 
+      fetch('/api/auth', { 
         method: "POST", //send POST request to server
         headers: {
           "Authorization": `Bearer ${token}`, //send server users token

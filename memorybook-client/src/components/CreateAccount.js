@@ -38,7 +38,7 @@ class CreateAccount extends Component {
   //Send form values to server to create new user account
   handleCreateAccount(e) {
     e.preventDefault(); //stop page reloading before fetch has completed
-    fetch('/newUser', { //send POST request to server
+    fetch('/api/newUser', { //send POST request to server
       method: "POST",
       headers: {
         "Content-Type": "application/json"

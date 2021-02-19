@@ -38,7 +38,7 @@ class Login extends Component {
   //Log In user 
   handleLogin(e) {
     e.preventDefault(); //stop page reloading before fetch has completed
-    fetch('/login', { //Send 'login' form values to server to verify if login details are correct
+    fetch('/api/login', { //Send 'login' form values to server to verify if login details are correct
       method: "POST", 
       headers: {
         "Content-Type": "application/json"

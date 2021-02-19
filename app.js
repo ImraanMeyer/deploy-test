@@ -40,18 +40,16 @@ app.use(
 
 
 // Require routing rules
-app.use('/', require('./routes/index.js'))
-app.use('/', require('./routes/users.js'))
-app.use('/', require('./routes/newUser.js'))
-app.use('/', require('./routes/login.js'))
-app.use('/', require('./routes/authorize.js'))
-app.use('/', require('./routes/getAlbum.js'))
-app.use('/', require('./routes/addPage.js'))
-app.use('/', require('./routes/updatePage.js'))
-app.use('/', require('./routes/deletePage.js'))
-app.use('/', require('./routes/getImage.js'))
-app.use('/', require('./routes/saveImage.js'))
-app.use('/', require('./routes/deleteImage.js'))
+app.use('/api', require('./routes/newUser.js'))
+app.use('/api', require('./routes/login.js'))
+app.use('/api', require('./routes/authorize.js'))
+app.use('/api', require('./routes/getAlbum.js'))
+app.use('/api', require('./routes/addPage.js'))
+app.use('/api', require('./routes/updatePage.js'))
+app.use('/api', require('./routes/deletePage.js'))
+app.use('/api', require('./routes/getImage.js'))
+app.use('/api', require('./routes/saveImage.js'))
+app.use('/api', require('./routes/deleteImage.js'))
 
 /* 
 //Catch 404 and forward to error handler

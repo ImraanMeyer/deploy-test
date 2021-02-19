@@ -31,7 +31,7 @@ class PhotoAlbum extends Component {
   //Load User's Photo Album
   componentDidMount() {
     const paramsID = this.props.match.params.userID; //get userID from URL params
-    fetch('/getAlbum', { //Send fetch request to server to get user's photo album
+    fetch('/api/getAlbum', { //Send fetch request to server to get user's photo album
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -72,7 +72,7 @@ class PhotoAlbum extends Component {
         isLoaded: true //load page
       });
     } else { //If there is a token, authorise token + get user's details from token
-      fetch('/auth', { 
+      fetch('/api/auth', { 
         method: "POST", //send POST request to server
         headers: {
           "Authorization": `Bearer ${token}`, //send server user's token
@@ -110,7 +110,7 @@ class PhotoAlbum extends Component {
       numPages: this.state.numPages + 1, //Increase 'numPages' to +1 for new page
       newUser: false //Change user view from newUser to existing user (if wasn't already)
     });
-    fetch('/addPage', { //send fetch request to server to create new photo album page
+    fetch('/api/addPage', { //send fetch request to server to create new photo album page
       method: "POST",
       headers: {
         "Content-Type": "application/json"
